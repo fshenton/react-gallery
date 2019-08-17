@@ -6,12 +6,13 @@ export default class ThumbnailSet extends Component {
 	render(){
 		return(
 			<fieldset className={s.thumbnailSet}>
-				<Thumbnail />
-				<Thumbnail />
-				<Thumbnail />
-				<Thumbnail />
-				<Thumbnail />
-				<Thumbnail />
+				<div className={s.thumbs}> 
+					<Thumbnail />
+					<Thumbnail />
+					<Thumbnail />
+					<Thumbnail />
+					<Thumbnail />					
+				</div>
 			</fieldset>
 		);
 	}
