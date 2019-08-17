@@ -12,7 +12,7 @@ function buildConfig(env, args){
 			modeOptions = {
 				mode: "development",
 				output: {
-					filename: "main.js",
+					filename: "bundle.js",
 					path: dist, 
 					publicPath: "/"
 				},
@@ -26,7 +26,7 @@ function buildConfig(env, args){
 			modeOptions = {
 				mode:"production",
 				output: {
-					filename: "main.js",
+					filename: "bundle.js",
 					path: dist,
 					publicPath: "./"
 				}
@@ -55,8 +55,19 @@ function buildConfig(env, args){
 							loader: "style-loader"
 						}
 					]
+				}, {
+					test: /\.jsx$/,
+					use: [
+						{
+							loader: "babel-loader",
+							options: {
+								presets: [
+									"@babel/preset-react"
+								]
+							}
+						}
+					]
 				}
-
 			]
 		}
 	};
