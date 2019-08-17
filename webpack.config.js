@@ -43,6 +43,11 @@ function buildConfig(env, args){
 					test: /\.scss$/,
 					use: [
 						{
+							loader: "style-loader",
+							options: {
+								injectType: "singletonStyleTag"
+							}
+						}, {
 							loader: "css-loader",
 							options: {
 								modules: {
@@ -51,8 +56,6 @@ function buildConfig(env, args){
 							}
 						}, {
 							loader: "sass-loader"
-						}, {
-							loader: "style-loader"
 						}
 					]
 				}, {
@@ -69,6 +72,12 @@ function buildConfig(env, args){
 					]
 				}
 			]
+		},
+		resolve: {
+			alias: {
+				"COMPONENTS": `${src}/components`,
+				"SHARED": `${src}/shared`
+			}
 		}
 	};
 
