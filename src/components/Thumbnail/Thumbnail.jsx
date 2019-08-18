@@ -3,18 +3,23 @@ import { s } from "./";
 
 export default class Thumbnail extends Component {
 	render(){
+		const {
+			src,
+			alt
+		} = this.props;
+
 		return (
-			<div className={s.thumbnail}>
+			<li className={s.thumbnail}>
 				<input 
 					className={s.radio} 
 					type="radio" 
 				/>
 				<img 
 					className={s.image} 
-					src="" 
-					alt="" 
+					src={src} 
+					alt={alt}
 				/>
-			</div>
+			</li>
 		);
 	}
 }

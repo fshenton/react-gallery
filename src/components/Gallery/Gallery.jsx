@@ -49,13 +49,17 @@ export default class Gallery extends Component {
 			alt: activeAlt
 		} = this.images[index];
 
+		const {
+			images
+		} = this;
+
 		return (
-			<form className={ s.gallery }>
+			<form className={s.gallery}>
 				<Carousel 
 					src={activeSrc}
 					alt={activeAlt}
 				/>
-				<ThumbnailSet imageSet={this.images} />
+				<ThumbnailSet imageSet={images} />
 			</form>
 		);
 	}
