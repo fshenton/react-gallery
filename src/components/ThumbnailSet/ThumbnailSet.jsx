@@ -4,6 +4,10 @@ import Thumbnail from "COMPONENTS/Thumbnail/";
 
 export default class ThumbnailSet extends Component {
 	render(){
+		const {
+			imageSet
+		} = this.props;
+
 		return(
 			<fieldset className={s.thumbnailSet}>
 				<div className={s.thumbs}> 

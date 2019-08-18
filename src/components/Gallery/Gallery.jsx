@@ -55,7 +55,7 @@ export default class Gallery extends Component {
 					src={activeSrc}
 					alt={activeAlt}
 				/>
-				<ThumbnailSet />
+				<ThumbnailSet imageSet={this.images} />
 			</form>
 		);
 	}
