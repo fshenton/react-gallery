@@ -6,7 +6,7 @@ import ThumbnailSet from "COMPONENTS/ThumbnailSet/";
 export default class Gallery extends Component {
 	render(){
 		return (
-			<form className="s.gallery">
+			<form className={ s.gallery }>
 				<Carousel />
 				<ThumbnailSet />
 			</form>

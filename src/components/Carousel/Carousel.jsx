@@ -8,8 +8,8 @@ export default class Carousel extends Component {
 		return (
 			<output className={s.carousel}>
 				<CarouselImage />
-				<CarouselNavButton />
-				<CarouselNavButton />
+				<CarouselNavButton direction="prev"/>
+				<CarouselNavButton direction="next"/>
 			</output>
 		);
 	}
