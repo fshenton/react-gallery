@@ -11,8 +11,8 @@ export default class Thumbnail extends Component {
 				/>
 				<img 
 					className={s.image} 
-					src="./assets/2d/bg1.jpg" 
-					alt="octopus lady" 
+					src="" 
+					alt="" 
 				/>
 			</div>
 		);

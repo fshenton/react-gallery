@@ -3,8 +3,13 @@ import { s } from "./";
 
 export default class CarouselImage extends Component {
 	render(){
+		const {
+			src,
+			alt
+		} = this.props;
+
 		return (
-			<img className={s.carouselImage} src="https://cache.escapistmagazine.com/2019/06/25164753/Cyberpunk-2077-eating-768x432.jpg" alt="cyberpunk 2077 promo image" alt="placeholder"/>
+			<img className={s.carouselImage} src={src} alt={alt} />
 		);
 	}
 }
