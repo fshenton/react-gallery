@@ -7,6 +7,8 @@ export default class Gallery extends Component {
 	constructor(){
 		super();
 
+		this.updateActiveIndex = this.updateActiveIndex.bind(this);
+
 		//SPECIFYING IMAGES TO USE
 		this.images = [	
 			{
@@ -38,8 +40,19 @@ export default class Gallery extends Component {
 		};
 	}
 
-	render(){
+	componentDidMount(){
+		this.timer = window.setTimeout(
+			() => this.updateActiveIndex(2)
+			, 2000);
+	}
 
+	updateActiveIndex(newIndex){
+		this.setState({
+			activeImageIndex: newIndex
+		});
+	}
+
+	render(){
 		const {
 			activeImageIndex: index
 		} = this.state;
@@ -58,6 +71,7 @@ export default class Gallery extends Component {
 				<Carousel 
 					src={activeSrc}
 					alt={activeAlt}
+					changeIndex={this.updateActiveIndex}
 				/>
 				<ThumbnailSet imageSet={images} />
 			</form>
