@@ -4,11 +4,17 @@
 }
 
 .radio {
-	width: 0;
+	position: absolute;
+	z-index: -1;
 }
 
-.image {
-	height: 100%;
-	width: 100%;
-	object-fit: cover;
+.label {
+	cursor: pointer;
+	
+	.image {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
 }
+

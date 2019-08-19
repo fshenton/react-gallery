@@ -7,17 +7,19 @@ export default class ThumbnailSet extends Component {
 		super(props);
 
 		this.generateThumbnails = this.generateThumbnails.bind(this);
+		this.updateSelectedThumb = this.updateSelectedThumb.bind(this);
 
 		const {
-			imageSet
+			imageSet,
 		} = this.props;
 
+		//populate the thumbnails based on the images passed from parent
 		const imageCount = imageSet.length; 
 		this.thumbnails = this.generateThumbnails(imageSet, imageCount);
 	}
 
 	generateThumbnails(set, count){
-		let thumbs = new Array(count);
+		let thumbs = [];
 
 		for(let i = 0; i < count; i++){	
 			const {
@@ -29,7 +31,9 @@ export default class ThumbnailSet extends Component {
 				Thumbnail, {
 				src: thumbSrc, 
 				alt: thumbAlt,
-				key: `thumbnail${i}`
+				key: `thumbnail${i}`,
+				index: i,
+				callback: this.updateSelectedThumb
 			});
 
 			thumbs.push(thumb);
@@ -38,12 +42,20 @@ export default class ThumbnailSet extends Component {
 		return thumbs;
 	}
 
+	updateSelectedThumb(index){
+		console.log("thumb index selected", index);
+
+		const {
+			changeActiveIndex
+		} = this.props;
+		
+		changeActiveIndex(index);
+	}
+
 	render(){
 		const {
 			imageSet
 		} = this.props;
-
-		const images = imageSet.length;
 
 		return(
 			<fieldset className={s.thumbnailSet}>

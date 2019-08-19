@@ -74,7 +74,10 @@ export default class Gallery extends Component {
 					changeActiveIndex={this.updateActiveIndex}
 					imageCount={imageNum}
 				/>
-				<ThumbnailSet imageSet={images} />
+				<ThumbnailSet 
+					imageSet={images} 
+					changeActiveIndex={this.updateActiveIndex}
+				/>
 			</form>
 		);
 	}
