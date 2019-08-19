@@ -10,10 +10,14 @@ export default class CarouselNavButton extends Component {
 			? s.prev 
 			: s.next;
 
+		const {
+			callback
+		} = this.props;
+
 		return (
 			<button 
 				className={`${s.carouselNavButton} ${dirClass}`}
-				onClick={(e) => e.preventDefault()}
+				onClick={(e) => callback(e, navDir)}
 			>
 				{navDir} 
 			</button>

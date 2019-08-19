@@ -40,13 +40,10 @@ export default class Gallery extends Component {
 		};
 	}
 
-	componentDidMount(){
-		this.timer = window.setTimeout(
-			() => this.updateActiveIndex(2)
-			, 2000);
-	}
-
 	updateActiveIndex(newIndex){
+		console.log("update request received");
+		console.log(newIndex);
+
 		this.setState({
 			activeImageIndex: newIndex
 		});
@@ -66,12 +63,16 @@ export default class Gallery extends Component {
 			images
 		} = this;
 
+		const imageNum = images.length;
+
 		return (
 			<form className={s.gallery}>
 				<Carousel 
 					src={activeSrc}
 					alt={activeAlt}
-					changeIndex={this.updateActiveIndex}
+					activeIndex={index}
+					changeActiveIndex={this.updateActiveIndex}
+					imageCount={imageNum}
 				/>
 				<ThumbnailSet imageSet={images} />
 			</form>
