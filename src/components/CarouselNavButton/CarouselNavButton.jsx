@@ -14,12 +14,20 @@ export default class CarouselNavButton extends Component {
 			callback
 		} = this.props;
 
+		const spanStyle = {
+			backgroundImage: `url("./assets/2d/${navDir}-arrow.svg"`
+		}
+
 		return (
 			<button 
 				className={`${s.carouselNavButton} ${dirClass}`}
 				onClick={(e) => callback(e, navDir)}
+				aria-label={`${navDir} button.`}
 			>
-				{navDir} 
+				<span 
+					className={s.icon}
+					style={spanStyle}
+				/> 
 			</button>
 		);
 	}

@@ -1,13 +1,34 @@
 .carouselNavButton {
 	position: absolute;
 	z-index: 3;
+	width: 5em;
+	height: 5em;
+	cursor: pointer;
+	background-color: #fafafa;
+
+	.icon {
+		width: 5em;
+		height: 5em;
+		display: inline-block;
+		background-repeat: no-repeat;
+	}
 
 	&.prev {
 		left: 0;
+		border-radius: 0 0.5em 0.5em 0;
+
+		.icon {
+			
+		}
 	}
 
 	&.next {
 		right: 0;
+		border-radius: 0.5em 0 0 0.5em;
+
+		.icon {
+			
+		}
 	}
 }
 
