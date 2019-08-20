@@ -7,13 +7,18 @@
 	cursor: pointer;
 	background-color: #fafafa;
 	transition: transform 0.3s;
+	
+	&:focus{
+		outline: 0;
+	}
 
 	.icon {
-		width: 5em;
-		height: 4em;
+		width: 50%;
+		height: 50%;
 		display: inline-block;
 		background-repeat: no-repeat;
 		transition: transform 0.3s;
+		transform: scale(1);
 	}
 
 	&.prev {
@@ -25,11 +30,12 @@
 			transform: translateX(50%);
 		}
 		
-		&:hover {
+		&:hover, &:focus {
 			transform: translateX(0%);
 
 			.icon {
 				transform: translateX(-10%);
+				transform: scale(1.5);
 			}
 		}
 	}
@@ -43,11 +49,12 @@
 			transform: translateX(-40%);
 		}
 
-		&:hover {
+		&:hover, &:focus {
 			transform: translateX(0%);
 
 			.icon {
 				transform: translateX(10%);
+				transform: scale(1.5);
 			}
 		}
 	}
