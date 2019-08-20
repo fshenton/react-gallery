@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { s } from "./";
+import CarouselBackgroundImage from "COMPONENTS/CarouselBackgroundImage/";
 import CarouselImage from "COMPONENTS/CarouselImage/";
 import CarouselNavButton from "COMPONENTS/CarouselNavButton/";
 
@@ -42,6 +43,7 @@ export default class Carousel extends Component {
 
 		return (
 			<output className={s.carousel}>
+				<CarouselBackgroundImage src={src} />
 				<CarouselImage src={src} alt={alt} />
 				<CarouselNavButton callback={this.requestPrevImage} direction="prev" />
 				<CarouselNavButton callback={this.requestNextImage} direction="next" />

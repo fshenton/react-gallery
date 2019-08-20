@@ -1,5 +1,6 @@
 .carouselNavButton {
 	position: absolute;
+	z-index: 3;
 
 	&.prev {
 		left: 0;

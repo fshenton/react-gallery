@@ -7,7 +7,7 @@ export default class ThumbnailSet extends Component {
 		super(props);
 
 		this.generateThumbnails = this.generateThumbnails.bind(this);
-		this.updateSelectedThumb = this.updateSelectedThumb.bind(this);
+		this.thumbSelected = this.thumbSelected.bind(this);
 
 		const {
 			imageSet,
@@ -21,6 +21,7 @@ export default class ThumbnailSet extends Component {
 	generateThumbnails(set, count){
 		let thumbs = [];
 
+		//for each image provided by parent, create a Thumbnail 
 		for(let i = 0; i < count; i++){	
 			const {
 				src : thumbSrc,
@@ -33,7 +34,7 @@ export default class ThumbnailSet extends Component {
 				alt: thumbAlt,
 				key: `thumbnail${i}`,
 				index: i,
-				callback: this.updateSelectedThumb
+				callback: this.thumbSelected
 			});
 
 			thumbs.push(thumb);
@@ -42,7 +43,7 @@ export default class ThumbnailSet extends Component {
 		return thumbs;
 	}
 
-	updateSelectedThumb(index){
+	thumbSelected(index){
 		console.log("thumb index selected", index);
 
 		const {
