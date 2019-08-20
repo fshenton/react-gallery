@@ -5,56 +5,56 @@
 	width: 10em;
 	height: 5em;
 	cursor: pointer;
-	background-color: #fafafa;
+	background-color: rgba(255, 255, 255, 0.6);
 	transition: transform 0.3s;
-	
+
 	&:focus{
 		outline: 0;
 	}
 
 	.icon {
-		width: 50%;
-		height: 50%;
+		width: 3.5em;
+		height: 3.5em;
 		display: inline-block;
-		background-repeat: no-repeat;
+		position: absolute;
+		background: no-repeat;
 		transition: transform 0.3s;
-		transform: scale(1);
 	}
 
 	&.prev {
 		left: 0;
-		border-radius: 0 0.5em 0.5em 0;
-		transform: translateX(-50%);
+		border-radius: 0 1.62em 1.62em 0;
+		transform: translate(-50%, -50%);
 
 		.icon {
-			transform: translateX(50%);
+			right: 0;
+			transform: translate(0%, -50%) scale(-1, 1);
 		}
 		
 		&:hover, &:focus {
-			transform: translateX(0%);
+			transform: translate(0%, -50%);
 
 			.icon {
-				transform: translateX(-10%);
-				transform: scale(1.5);
+				transform: translate(-10%, -50%) scale(-1.2, 1.2);
 			}
 		}
 	}
 
 	&.next {
 		right: 0;
-		border-radius: 0.5em 0 0 0.5em;
-		transform: translateX(50%);
+		border-radius: 1.62em 0 0 1.62em;
+		transform: translate(50%, -50%);
 
 		.icon {
-			transform: translateX(-40%);
+			left: 0;
+			transform: translate(0%, -50%);
 		}
 
 		&:hover, &:focus {
-			transform: translateX(0%);
+			transform: translate(0%, -50%);
 
 			.icon {
-				transform: translateX(10%);
-				transform: scale(1.5);
+				transform: translate(10%, -50%) scale(1.2, 1.2);
 			}
 		}
 	}

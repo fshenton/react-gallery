@@ -15,7 +15,7 @@ export default class CarouselNavButton extends Component {
 		} = this.props;
 
 		const spanStyle = {
-			backgroundImage: `url("./assets/2d/${navDir}-arrow.svg"`
+			backgroundImage: `url("./assets/2d/right-arrow.svg"`
 		}
 
 		return (
