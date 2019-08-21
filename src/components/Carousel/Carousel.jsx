@@ -59,10 +59,10 @@ export default class Carousel extends Component {
 			} = imageSet[i];
 
 			//if image is the active image, we want to make it visible
-			const imageClass = i === activeIndex ? activeClass : hiddenClass;
+			const hidden = i === activeIndex ? false : true;
 
 			imagesArray.push(
-				<div className={`${imageClass} ${s.imageEl}`} key={`CarouselElement${i}`}>
+				<div className={s.imageWrapper} aria-hidden={hidden} key={`CarouselElement${i}`}>
 					<CarouselBackgroundImage 
 						src={src} 
 					/>
