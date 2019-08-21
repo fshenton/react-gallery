@@ -34,5 +34,9 @@
 		width: 100%;
 		object-fit: cover;
 	}
+
+	&:active {
+		transform: scale(1.02);
+	}
 }
 
