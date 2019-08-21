@@ -34,7 +34,8 @@ export default class ThumbnailSet extends Component {
 				alt: thumbAlt,
 				key: `thumbnail${i}`,
 				index: i,
-				callback: this.thumbSelected
+				callback: this.thumbSelected,
+				defaultChecked: i === 0 ? true : false
 			});
 
 			thumbs.push(thumb);

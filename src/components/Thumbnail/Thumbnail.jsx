@@ -24,7 +24,8 @@ export default class Thumbnail extends Component {
 		const {
 			src,
 			alt,
-			index
+			index,
+			defaultChecked
 		} = this.props;
 
 		const inputId = `thumbnail${index}`;
@@ -37,6 +38,7 @@ export default class Thumbnail extends Component {
 					name="thumbnails"
 					id={inputId}
 					onClick={this.handleClick}
+					defaultChecked={defaultChecked}
 				/>
 				<label className={s.label} htmlFor={inputId}>
 					<img 
