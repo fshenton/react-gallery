@@ -51,25 +51,23 @@ export default class Gallery extends Component {
 			activeImageIndex: index
 		} = this.state;
 
-		const {
-			src: activeSrc,
-			alt: activeAlt
-		} = this.images[index];
+		// const {
+		// 	src: activeSrc,
+		// 	alt: activeAlt
+		// } = this.images[index];
 
 		const {
 			images
 		} = this;
 
-		const imageNum = images.length;
+		// const imageNum = images.length;
 
 		return (
 			<form className={s.gallery}>
 				<Carousel 
-					src={activeSrc}
-					alt={activeAlt}
+					imageSet={images}
 					activeIndex={index}
 					changeActiveIndex={this.updateActiveIndex}
-					imageCount={imageNum}
 				/>
 				<ThumbnailSet 
 					imageSet={images} 

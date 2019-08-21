@@ -5,7 +5,7 @@ import Thumbnail from "COMPONENTS/Thumbnail/";
 export default class ThumbnailSet extends Component {
 	constructor(props){
 		super(props);
-
+		
 		this.generateThumbnails = this.generateThumbnails.bind(this);
 		this.thumbSelected = this.thumbSelected.bind(this);
 	}
@@ -13,8 +13,6 @@ export default class ThumbnailSet extends Component {
 	generateThumbnails(imageSet, activeIndex){
 		const numImages = imageSet.length;
 		const thumbArray = [];
-
-		//checked being set by activeIndex allows for prev/next button to also sync with thumbs
 
 		for(let i = 0; i < numImages; i++){
 			thumbArray.push(
@@ -46,6 +44,7 @@ export default class ThumbnailSet extends Component {
 			activeIndex
 		} = this.props;
 
+		//calling this each render allows us to set the checked value even if prev/next button used to change image
 		const thumbs = this.generateThumbnails(imageSet, activeIndex);
 
 		return(

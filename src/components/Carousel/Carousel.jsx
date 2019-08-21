@@ -19,13 +19,12 @@ export default class Carousel extends Component {
 		const {
 			changeActiveIndex,
 			activeIndex,
-			imageCount
+			imageSet
 		} = this.props;
 
-		//-1 for prev, +1 for next 
-		let newIndex = activeIndex + increment;
-
-		//wrap to 0 or last index of image array
+		const imageCount = imageSet.length;
+		
+		let newIndex = activeIndex + increment; //-1 for prev, +1 for next 
 		if(newIndex < 0){
 			newIndex = imageCount-1
 		}
@@ -37,14 +36,45 @@ export default class Carousel extends Component {
 
 	render(){
 		const {
-			src, 
-			alt
+			imageSet,
+			activeIndex
 		} = this.props;
+
+		const {
+			src,
+			alt
+		} = imageSet[activeIndex];
+
+		const numImages = imageSet.length;
+
+		const hiddenClass = s.hiddenImageEl;
+		const activeClass = s.activeImageEl;
+
+		const carouselImages = [];
+		for(let i = 0; i < numImages; i++){
+			const {
+				src,
+				alt
+			} = imageSet[i];
+
+			const imageClass = i === activeIndex ? activeClass : hiddenClass;
+
+			carouselImages.push(
+				<div className={`${imageClass} ${s.imageEl}`} key={`CarouselElement${i}`}>
+					<CarouselBackgroundImage 
+						src={src} 
+					/>
+					<CarouselImage
+						src={src} 
+						alt={alt} 
+					/>
+				</div>
+			);
+		}
 
 		return (
 			<output className={s.carousel}>
-				<CarouselBackgroundImage src={src} />
-				<CarouselImage src={src} alt={alt} />
+				{carouselImages}
 				<CarouselNavButton callback={this.requestPrevImage} direction="prev" />
 				<CarouselNavButton callback={this.requestNextImage} direction="next" />
 			</output>
