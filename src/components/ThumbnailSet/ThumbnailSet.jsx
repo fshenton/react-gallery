@@ -8,45 +8,31 @@ export default class ThumbnailSet extends Component {
 
 		this.generateThumbnails = this.generateThumbnails.bind(this);
 		this.thumbSelected = this.thumbSelected.bind(this);
-
-		const {
-			imageSet,
-		} = this.props;
-
-		//populate the thumbnails based on the images passed from parent
-		const imageCount = imageSet.length; 
-		this.thumbnails = this.generateThumbnails(imageSet, imageCount);
 	}
 
-	generateThumbnails(set, count){
-		let thumbs = [];
+	generateThumbnails(imageSet, activeIndex){
+		const numImages = imageSet.length;
+		const thumbArray = [];
 
-		//for each image provided by parent, create a Thumbnail 
-		for(let i = 0; i < count; i++){	
-			const {
-				src : thumbSrc,
-				alt : thumbAlt
-			} = set[i];
+		//checked being set by activeIndex allows for prev/next button to also sync with thumbs
 
-			const thumb = React.createElement(
-				Thumbnail, {
-				src: thumbSrc, 
-				alt: thumbAlt,
-				key: `thumbnail${i}`,
-				index: i,
-				callback: this.thumbSelected,
-				defaultChecked: i === 0 ? true : false
-			});
-
-			thumbs.push(thumb);
+		for(let i = 0; i < numImages; i++){
+			thumbArray.push(
+				<Thumbnail 
+					src= {imageSet[i].src}
+					alt= {imageSet[i].alt}
+					key= {`thumbnail${i}`}
+					index= {i}
+					callback= {this.thumbSelected}
+					checked= {i === activeIndex ? true : false}
+				/>
+			);
 		}
 
-		return thumbs;
+		return thumbArray;
 	}
 
 	thumbSelected(index){
-		console.log("thumb index selected", index);
-
 		const {
 			changeActiveIndex
 		} = this.props;
@@ -56,13 +42,16 @@ export default class ThumbnailSet extends Component {
 
 	render(){
 		const {
-			imageSet
+			imageSet,
+			activeIndex
 		} = this.props;
+
+		const thumbs = this.generateThumbnails(imageSet, activeIndex);
 
 		return(
 			<fieldset className={s.thumbnailSet}>
 				<ul className={s.thumbs}> 	
-					{this.thumbnails}
+					{thumbs}
 				</ul>
 			</fieldset>
 		);

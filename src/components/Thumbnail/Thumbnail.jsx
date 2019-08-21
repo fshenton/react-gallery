@@ -25,7 +25,7 @@ export default class Thumbnail extends Component {
 			src,
 			alt,
 			index,
-			defaultChecked
+			checked
 		} = this.props;
 
 		const inputId = `thumbnail${index}`;
@@ -37,8 +37,8 @@ export default class Thumbnail extends Component {
 					type="radio" 
 					name="thumbnails"
 					id={inputId}
-					onClick={this.handleClick}
-					defaultChecked={defaultChecked}
+					onChange={this.handleClick}
+					checked={checked}
 				/>
 				<label className={s.label} htmlFor={inputId}>
 					<img 

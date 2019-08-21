@@ -41,9 +41,6 @@ export default class Gallery extends Component {
 	}
 
 	updateActiveIndex(newIndex){
-		console.log("update request received");
-		console.log(newIndex);
-
 		this.setState({
 			activeImageIndex: newIndex
 		});
@@ -76,6 +73,7 @@ export default class Gallery extends Component {
 				/>
 				<ThumbnailSet 
 					imageSet={images} 
+					activeIndex={index}
 					changeActiveIndex={this.updateActiveIndex}
 				/>
 			</form>
