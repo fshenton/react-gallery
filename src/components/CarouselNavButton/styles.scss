@@ -28,14 +28,14 @@
 
 		.icon {
 			right: 0;
-			transform: translate(0%, -50%) scale(-1, 1);
+			transform: translate(0%, -50%) scale(-0.8, 0.8);
 		}
 		
 		&:hover, &:focus {
 			transform: translate(0%, -50%);
 
 			.icon {
-				transform: translate(-10%, -50%) scale(-1.2, 1.2);
+				transform: translate(-10%, -50%) scale(-1, 1);
 			}
 		}
 
@@ -53,14 +53,14 @@
 
 		.icon {
 			left: 0;
-			transform: translate(0%, -50%);
+			transform: translate(0%, -50%) scale(0.8);
 		}
 
 		&:hover, &:focus {
 			transform: translate(0%, -50%);
 
 			.icon {
-				transform: translate(10%, -50%) scale(1.2, 1.2);
+				transform: translate(10%, -50%) scale(1);
 			}
 		}
 
