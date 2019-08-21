@@ -22,12 +22,12 @@ export default class ThumbnailSet extends Component {
 		for(let i = 0; i < numImages; i++){
 			thumbArray.push(
 				<Thumbnail 
-					src= {imageSet[i].src}
-					alt= {imageSet[i].alt}
-					key= {`thumbnail${i}`}
-					index= {i}
-					callback= {this.thumbSelected}
-					checked= {i === activeIndex ? true : false}
+					src={imageSet[i].src}
+					alt={imageSet[i].alt}
+					key={`thumbnail${i}`}
+					index={i}
+					callback={this.thumbSelected}
+					checked={i === activeIndex ? true : false}
 				/>
 			);
 		}
