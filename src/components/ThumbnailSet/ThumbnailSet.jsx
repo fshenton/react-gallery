@@ -10,7 +10,12 @@ export default class ThumbnailSet extends Component {
 		this.thumbSelected = this.thumbSelected.bind(this);
 	}
 
-	generateThumbnails(imageSet, activeIndex){
+	generateThumbnails(){
+		const {
+			imageSet,
+			activeIndex
+		} = this.props;
+
 		const numImages = imageSet.length;
 		const thumbArray = [];
 
@@ -39,13 +44,9 @@ export default class ThumbnailSet extends Component {
 	}
 
 	render(){
-		const {
-			imageSet,
-			activeIndex
-		} = this.props;
 
 		//calling this each render allows us to set the checked value even if prev/next button used to change image
-		const thumbs = this.generateThumbnails(imageSet, activeIndex);
+		const thumbs = this.generateThumbnails();
 
 		return(
 			<fieldset className={s.thumbnailSet}>

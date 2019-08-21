@@ -11,6 +11,7 @@ export default class Carousel extends Component {
 		//FUNCTION BINDING
 		this.requestPrevImage = this.requestNewImage.bind(this, -1);
 		this.requestNextImage = this.requestNewImage.bind(this, 1);
+		this.generateCarouselImages = this.generateCarouselImages.bind(this);
 	}
 
 	requestNewImage(increment, e){
@@ -34,7 +35,7 @@ export default class Carousel extends Component {
 		changeActiveIndex(newIndex);
 	}
 
-	render(){
+	generateCarouselImages(){
 		const {
 			imageSet,
 			activeIndex
@@ -47,19 +48,20 @@ export default class Carousel extends Component {
 
 		const numImages = imageSet.length;
 
-		const hiddenClass = s.hiddenImageEl;
-		const activeClass = s.activeImageEl;
+		const hiddenClass = s.hiddenImageEl; //opacity = 0
+		const activeClass = s.activeImageEl; //opacity = 1
 
-		const carouselImages = [];
+		const imagesArray = [];
 		for(let i = 0; i < numImages; i++){
 			const {
 				src,
 				alt
 			} = imageSet[i];
 
+			//if image is the active image, we want to make it visible
 			const imageClass = i === activeIndex ? activeClass : hiddenClass;
 
-			carouselImages.push(
+			imagesArray.push(
 				<div className={`${imageClass} ${s.imageEl}`} key={`CarouselElement${i}`}>
 					<CarouselBackgroundImage 
 						src={src} 
@@ -71,6 +73,14 @@ export default class Carousel extends Component {
 				</div>
 			);
 		}
+
+		return imagesArray;
+
+	}
+
+	render(){
+
+		const carouselImages = this.generateCarouselImages();
 
 		return (
 			<output className={s.carousel}>
