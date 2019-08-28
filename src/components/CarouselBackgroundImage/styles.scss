@@ -1,0 +1,11 @@
+.bgImage {
+	position: absolute;
+	width: 110%;
+	height: 110%;
+	transform: translate(-5%, -5%);
+	background-image: none;
+	background-repeat: no-repeat;
+	background-position: top;
+	background-size: cover;
+	filter: blur(1em);
+}

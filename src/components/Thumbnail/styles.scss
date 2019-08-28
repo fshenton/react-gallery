@@ -1,0 +1,42 @@
+.thumbnail {
+	flex: 1;
+	height: 100%;
+	position: relative;
+    overflow: hidden;
+    list-style-type: none;
+}
+
+.radio {
+	position: absolute;
+	z-index: -1;
+
+	&:checked ~.label {
+		filter: grayscale(0%);
+		transform: scale(1.05);
+	}
+}
+
+.label {
+	display: block;
+	height: 100%;
+	cursor: pointer;
+	transition: filter .15s, transform .15s;
+	filter: grayscale(100%);
+	transform: scale(1.1);
+
+	&:hover {
+		filter: grayscale(0%);
+		transform: scale(1.05);
+	}
+
+	.image {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
+
+	&:active {
+		transform: scale(1.02);
+	}
+}
+

@@ -1,0 +1,74 @@
+.carouselNavButton {
+	position: absolute;
+	display: block;
+	z-index: 3;
+	width: 10em;
+	height: 5em;
+	cursor: pointer;
+	background-color: rgba(255, 255, 255, 0.6);
+	transition: transform 0.15s;
+
+	&:focus{
+		outline: 0;
+	}
+
+	.icon {
+		width: 3.5em;
+		height: 3.5em;
+		display: inline-block;
+		position: absolute;
+		background: no-repeat;
+		transition: transform 0.15s;
+	}
+
+	&.prev {
+		left: 0;
+		border-radius: 0 1.62em 1.62em 0;
+		transform: translate(-50%, -50%);
+
+		.icon {
+			right: 0;
+			transform: translate(0%, -50%) scale(-0.8, 0.8);
+		}
+		
+		&:hover, &:focus {
+			transform: translate(0%, -50%);
+
+			.icon {
+				transform: translate(-10%, -50%) scale(-1, 1);
+			}
+		}
+
+		&:active {
+			transform: translate(0%, -50%) scale(1, 0.9);
+			transform-origin: center;
+			background-color: rgba(255, 255, 255, 0.75);
+		}
+	}
+
+	&.next {
+		right: 0;
+		border-radius: 1.62em 0 0 1.62em;
+		transform: translate(50%, -50%);
+
+		.icon {
+			left: 0;
+			transform: translate(0%, -50%) scale(0.8);
+		}
+
+		&:hover, &:focus {
+			transform: translate(0%, -50%);
+
+			.icon {
+				transform: translate(10%, -50%) scale(1);
+			}
+		}
+
+		&:active {
+			transform: translate(0%, -50%) scale(1, 0.9);
+			transform-origin: center;
+			background-color: rgba(255, 255, 255, 0.75);
+		}
+	}
+}
+

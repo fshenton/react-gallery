@@ -1,0 +1,35 @@
+{
+  "name": "react-gallery",
+  "version": "1.0.0",
+  "description": "Gallery using React",
+  "main": "index.js",
+  "scripts": {
+    "build-dev-new": "cp -r src/index.html dist && webpack-dev-server --mode=development --open",
+    "build-dev-refresh": "cp -r src/index.html dist && webpack-dev-server --mode=development",
+    "build-prod": "cp -r src/index.html dist && webpack --mode-production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fshenton/react-gallery.git"
+  },
+  "author": "Frank Shenton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fshenton/react-gallery/issues"
+  },
+  "homepage": "https://github.com/fshenton/react-gallery#readme",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "node-sass": "^4.12.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "sass-loader": "^7.2.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.8.0"
+  }
+}
