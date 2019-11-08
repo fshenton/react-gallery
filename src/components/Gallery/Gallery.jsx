@@ -12,33 +12,33 @@ export default class Gallery extends Component {
 		//SPECIFYING IMAGES TO USE
 
 		//UNCOMMENT TO USE IMAGES FROM FILMS
-		this.images = [	
-			{
-				src: "./assets/2d/primary-images/exmachina.jpg", 
-				alt: "Image from Ex Machina."
-			}, {
-				src: "./assets/2d/primary-images/godfather.jpg", 
-				alt: "Image from Godfather."
-			}, {
-				src: "./assets/2d/primary-images/leon.jpg", 
-				alt: "Image from Leon."
-			}, {
-				src: "./assets/2d/primary-images/raw.jpg", 
-				alt: "Image from Raw."
-			}, {
-				src: "./assets/2d/primary-images/terminator.jpg", 
-				alt: "Image from Terminator."
-			}, {
-				src: "./assets/2d/primary-images/thehandmaiden.jpg", 
-				alt: "Image from Handmaiden."
-			}, {
-				src: "./assets/2d/primary-images/undertheskin.jpg",
-				alt: "Image from Under the Skin."
-			}
-		];
+		// this.images = [	
+		// 	{
+		// 		src: "./assets/2d/primary-images/exmachina.jpg", 
+		// 		alt: "Image from Ex Machina."
+		// 	}, {
+		// 		src: "./assets/2d/primary-images/godfather.jpg", 
+		// 		alt: "Image from Godfather."
+		// 	}, {
+		// 		src: "./assets/2d/primary-images/leon.jpg", 
+		// 		alt: "Image from Leon."
+		// 	}, {
+		// 		src: "./assets/2d/primary-images/raw.jpg", 
+		// 		alt: "Image from Raw."
+		// 	}, {
+		// 		src: "./assets/2d/primary-images/terminator.jpg", 
+		// 		alt: "Image from Terminator."
+		// 	}, {
+		// 		src: "./assets/2d/primary-images/thehandmaiden.jpg", 
+		// 		alt: "Image from Handmaiden."
+		// 	}, {
+		// 		src: "./assets/2d/primary-images/undertheskin.jpg",
+		// 		alt: "Image from Under the Skin."
+		// 	}
+		// ];
 
 		//UNCOMMENT TO USE ILLUSTRATED IMAGES
-		/*this.images = [	
+		this.images = [	
 			{
 				src: "./assets/2d/alt-images/pinksunset.png", 
 				alt: "Illustrated image showing a stunning pink sunset."
@@ -64,7 +64,7 @@ export default class Gallery extends Component {
 				src: "./assets/2d/alt-images/astronaut.png",
 				alt: "Illustrated image showing an astronaut with the weight of a planet on their back."
 			}
-		];*/
+		];
 
 		this.state = {
 			activeImageIndex: 0,
