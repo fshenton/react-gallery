@@ -40,28 +40,28 @@ export default class Gallery extends Component {
 		//UNCOMMENT TO USE ILLUSTRATED IMAGES
 		this.images = [	
 			{
-				src: "/assets/2d/alt-images/pinksunset.png", 
+				src: "./assets/2d/alt-images/pinksunset.png", 
 				alt: "Illustrated image showing a stunning pink sunset."
 			}, {
-				src: "/assets/2d/alt-images/moodypinksunset.png", 
+				src: "./assets/2d/alt-images/moodypinksunset.png", 
 				alt: "Illustrated image showing a moody pink sunset."
 			}, {
-				src: "/assets/2d/alt-images/pinkcityscape.png", 
+				src: "./assets/2d/alt-images/pinkcityscape.png", 
 				alt: "Illustrated image showing a dramatic 80s cityscape."
 			}, {
-				src: "/assets/2d/alt-images/ghostintheshell.png", 
+				src: "./assets/2d/alt-images/ghostintheshell.png", 
 				alt: "Illustrated image from Ghost in the Shell."
 			}, {
-				src: "/assets/2d/alt-images/lavapinktree.png", 
+				src: "./assets/2d/alt-images/lavapinktree.png", 
 				alt: "Illustrated image showing flowing lava and a pink blossom tree."
 			}, {
-				src: "/assets/2d/alt-images/asiancityscape.png", 
+				src: "./assets/2d/alt-images/asiancityscape.png", 
 				alt: "Illustrated image showing the beauty found in a poor, asian neighbourhood."
 			}, {
-				src: "/assets/2d/alt-images/pinkmountain.png",
+				src: "./assets/2d/alt-images/pinkmountain.png",
 				alt: "Illustrated image showing a beautiful landscape containing the moon and a pink mountain."
 			}, {
-				src: "/assets/2d/alt-images/astronaut.png",
+				src: "./assets/2d/alt-images/astronaut.png",
 				alt: "Illustrated image showing an astronaut with the weight of a planet on their back."
 			}
 		];
